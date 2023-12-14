@@ -57,6 +57,6 @@ typedef struct cv_s
 extern cv_t cv;
 
 void push_s(stack_t **top, unsigned int count);
-
+void pall_s(stack_t **top, unsigned int count);
 
 #endif /*MONTY_H*/
