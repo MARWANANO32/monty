@@ -13,7 +13,7 @@ void push_s(stack_t **top, unsigned int count)
 	{
 		if (cv.arg[0] == '-')
 			j++;
-		for (; cv.arg[j] != '\0'; j++)
+		for (int j = 0; cv.arg[j] != '\0'; j++)
 		{
 			if (cv.arg[j] > 57 || cv.arg[j] < 48)
 				flags = 1;
