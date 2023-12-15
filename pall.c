@@ -9,10 +9,10 @@ void pall_s(stack_t **top, unsigned int count)
 	stack_t *h;
 	(void)count;
 
-	h = *top;
-	if (!h)
-		return;
-	while (h)
+	if (top == NULL)
+		exit(EXIT_FAILURE);
+	h = *top
+	while (h != NULL)
 	{
 		printf("%d\n", h->n);
 		h = h->next;
