@@ -21,7 +21,7 @@ void push_s(stack_t **top, unsigned int count)
 				fprintf(stderr, "L%d: usage: push integer\n", count);
 				fclose(cv.file);
 				free(cv.content);
-				free_stack(*head);
+				free_stack(*top);
 				exit(EXIT_FAILURE);
 		}
 	}
@@ -30,11 +30,11 @@ void push_s(stack_t **top, unsigned int count)
 		fprintf(stderr, "L%d: usage: push integer\n", count);
 		fclose(cv.file);
 		free(cv.content);
-		free_stack(*head);
+		free_stack(*top);
 		exit(EXIT_FAILURE); }
 	n = atoi(cv.arg);
 	if (cv.flag == 0)
-		addnode(head, n);
+		addnode(top, n);
 	else
-		addqueue(head, n);
+		addqueue(top, n);
 }
