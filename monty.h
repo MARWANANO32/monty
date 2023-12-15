@@ -60,4 +60,5 @@ void push_s(stack_t **top, unsigned int count);
 void pall_s(stack_t **top, unsigned int count);
 void stack_s(stack_t **top, unsigned int count);
 void free_stack(stack_t *top);
+void add_s(stack_t **top, unsigned int count);
 #endif /*MONTY_H*/
