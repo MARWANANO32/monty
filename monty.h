@@ -41,26 +41,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/**
- * struct cv_s - the variables, args, file and the line content
- * @arg: the value
- * @file: the pointer to many file
- * @content: the line content
- * @flag: the flag change stack <->
- * Description: carries values through the program
- */
-typedef struct cv_s
-{
-	char *arg;
-	FILE *file;
-	char *content;
-	int flag;
-} cv_t;
-extern cv_t cv;
+extern stack_t *top;
+typedef void (*op_func)(stack_t **, unsigned int);
 
-void push_s(stack_t **top, unsigned int count);
-void pall_s(stack_t **top, unsigned int count);
-void stack_s(stack_t **top, unsigned int count);
-void free_stack(stack_t *top);
-void add_s(stack_t **top, unsigned int count);
+/***file operations***/
+void open_file(char *file_name);
+int parse_line(char *buffer, int line_number, int format);
+void read_file(FILE *);
+int len_chars(FILE *);
+void find_func(char *, char *, int, int);
 #endif /*MONTY_H*/
